@@ -750,7 +750,7 @@ class StoreProvider<St> extends InheritedWidget {
 
   static Store<St> of<St>(BuildContext context, Object debug) {
     final type = _typeOf<StoreProvider<St>>();
-    final StoreProvider<St> provider = context.inheritFromWidgetOfExactType(type);
+    final StoreProvider<St> provider = context.dependOnInheritedWidgetOfExactType<StoreProvider<St>>(type);
 
     if (provider == null) throw StoreConnectorError(type, debug);
 
